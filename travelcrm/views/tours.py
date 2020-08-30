@@ -174,7 +174,7 @@ class ToursView(BaseView):
             rt = get_resource_type_by_resource(self.context)
             rt.settings = {'column_index': controls.get('column_index')}
             return {'success_message': _(u'Saved')}
-        except colander.Invalid, e:
+        except colander.Invalid as e:
             return {
                 'error_message': _(u'Please, check errors'),
                 'errors': e.asdict()

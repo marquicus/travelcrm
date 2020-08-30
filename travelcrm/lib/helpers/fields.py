@@ -4,8 +4,8 @@ import json
 from collections import namedtuple
 
 from pytz import common_timezones
-from webhelpers.html import tags
-from webhelpers.html import HTML
+from webhelpers2.html import tags
+from webhelpers2.html import HTML
 
 from ...interfaces import IServiceType
 from ...resources.accomodations import AccomodationsResource

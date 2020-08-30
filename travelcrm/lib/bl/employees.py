@@ -1,6 +1,5 @@
 # -*coding: utf-8-*-
-
-from types import ClassType
+from __future__ import absolute_import
 
 from sqlalchemy import desc
 
@@ -49,7 +48,7 @@ def get_employee_permisions(employee, resource):
     """retrieve permissions for resource
     resource can be instance of context or context class
     """
-    if isinstance(resource, (type, ClassType)):
+    if isinstance(resource, type):
         rt = get_resource_type_by_resource_cls(resource)
     else:
         rt = get_resource_type_by_resource(resource)

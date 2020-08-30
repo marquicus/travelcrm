@@ -181,7 +181,7 @@ class CampaignsView(BaseView):
                     DBSession.delete(item)
                     event = CampaignDeleted(self.request, item)
                     self.request.registry.notify(event)
-            except Exception, e:
+            except Exception as e:
                 log.error(e)
                 errors=True
                 DBSession.rollback()
