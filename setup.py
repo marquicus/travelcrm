@@ -63,7 +63,7 @@ requires = [
 
 setup(
     name='travelcrm',
-    version='0.6.4-dev3',
+    version='0.6.4-beta1',
     description='travelcrm',
     long_description=README + '\n\n' + CHANGES,
     classifiers=[
@@ -71,6 +71,7 @@ setup(
       "Framework :: Pyramid",
       "Topic :: Internet :: WWW/HTTP",
       "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+      "Programming Language :: Python :: 2.7",
       ],
     author='Vitalii Mazur',
     author_email='vitalii.mazur@gmail.com',
