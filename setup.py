@@ -63,7 +63,6 @@ requires = [
     'Pillow==3.4.2',
     'beautifulsoup4==4.5.1',
     'iso8601==0.1.11',
-    'jupyter',
 ]
 
 setup(

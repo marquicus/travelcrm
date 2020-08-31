@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:5-alpine
+    ports:
+    - "6379:6379"
+    command:
+    - --loglevel warning
+    volumes:
+    - redis-volume:/data:Z
+
+  app:
+    image: docker.pkg.github.com/marquicus/${PROJECT}
+    command: sh -c "pserve production.ini"
+    depends_on:
+    - redis
+    ports:
+    - "6543:6543"
+    volumes:
+    - /logs:/logs:Z
+    environment:
+    - REDIS_HOST=redis
+    - POSTGRES_HOST=${POSTGRES_HOST}
+    - POSTGRES_USER=${POSTGRES_USER}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    - POSTGRES_DB=${POSTGRES_DB}
+    - SENTRY_DSN=${SENTRY_DSN}
+    - SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT}
+    - SECRET_KEY=${SECRET_KEY}
+
+volumes:
+  redis-volume:

@@ -4,7 +4,6 @@
 ##
 APPVERSION=5.0
 APPMAIL="soporte@zentek.com.mx"
-GROUPREPO=ztst
 NOCLR=\x1b[0m
 OKCLR=\x1b[32;01m
 ERRCLR=\x1b[31;01m
@@ -90,7 +89,8 @@ test-versions:
 
 # populate - Run test from different version managed in tox
 populate: env
-	PGPASSWORD=${POSTGRES_PASSWORD} psql -h${POSTGRES_HOST} -p${POSTGRES_PORT} -U${POSTGRES_USER} -d${POSTGRES_DB} -f sql/travelcrm.sql
+	@sleep 2
+	@PGPASSWORD=${POSTGRES_PASSWORD} psql -h${POSTGRES_HOST} -p${POSTGRES_PORT} -U${POSTGRES_USER} -d${POSTGRES_DB} -f sql/travelcrm.sql
 
 #: coverage - Coverage
 coverage:
@@ -111,10 +111,6 @@ else
 	pip install --upgrade pip setuptools
 	python setup.py develop
 endif
-
-#: notebook - Runs jupyter environment
-notebook: env
-	@jupyter notebook --ip=0.0.0.0 --no-browser --notebook-dir ./notebook
 
 # postgres - Start postgres container
 postgres: env
@@ -180,7 +176,7 @@ shell:
 
 #: dbshell - Access database shell
 dbshell:
-	PGPASSWORD=${POSTGRES_PASSWORD} psql -h${POSTGRES_HOST} -p${POSTGRES_PORT} -U${POSTGRES_USER} -d${POSTGRES_DB}
+	@PGPASSWORD=${POSTGRES_PASSWORD} psql -h${POSTGRES_HOST} -p${POSTGRES_PORT} -U${POSTGRES_USER} -d${POSTGRES_DB}
 
 #: ddl - Dump database ddl
 ddl:
@@ -202,6 +198,27 @@ stop: backend-stop
 
 #: deploy - Deploy
 deploy: env clean backend-start populate run
+
+# build - Push to upload
+build:
+	# Must login first to your registry
+	docker build -t docker.pkg.github.com/marquicus/${PROJECT} .
+
+# push - Push to upload
+push: build
+	docker push docker.pkg.github.com/marquicus/${PROJECT}
+
+#: release - Build and push
+release: build push
+
+#: tag - Generate new tag with current version
+tag: env
+	git tag -a "v$(shell python manage.py print-version | tail -1 )"
+	@gitchangelog > CHANGELOG
+
+# compose - Run with docker compose
+compose: build
+	docker-compose up
 
 .PHONY: env docs clean development production
 .DEFAULT_GOAL := check
