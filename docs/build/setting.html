@@ -5,11 +5,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Настройка &mdash; TravelCRM 0.6.4-dev documentation</title>
+    <title>Настройка &#8212; TravelCRM 0.6.4-dev documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     
     <script type="text/javascript">
@@ -26,8 +26,10 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="TravelCRM 0.6.4-dev documentation" href="index.html" />
     <link rel="next" title="Начала" href="getting_started.html" />
     <link rel="prev" title="Установка" href="install.html" />
@@ -37,7 +39,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -55,7 +57,6 @@
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
-            <li class="divider-vertical"></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -68,7 +69,7 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Установка</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Настройка</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Настройка</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Начала</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Конфигурация</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changes.html">Изменения</a></li>
@@ -99,11 +100,11 @@
               
                 
   <li>
-    <a href="install.html" title="Previous Chapter: Установка"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Установка</span>
+    <a href="install.html" title="Previous Chapter: Установка"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Установка</span>
     </a>
   </li>
   <li>
-    <a href="getting_started.html" title="Next Chapter: Начала"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Начала &raquo;</span>
+    <a href="getting_started.html" title="Next Chapter: Начала"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Начала &raquo;</span>
     </a>
   </li>
               
@@ -135,7 +136,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 content">
       
   <div class="section" id="id1">
 <h1>Настройка<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
@@ -151,7 +152,7 @@
 приложения в продакшен. В архиве с исходным кодом TravelCRM имеется готовый
 конфигурационный файл <em>development.ini</em>, который используется для запуска приложения
 на этапе тестирования и разработки:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./bin/pserve --reload ./travelcrm-0.6.4.dev0/development.ini
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./bin/pserve --reload ./travelcrm-0.6.4.dev0/development.ini
 </pre></div>
 </div>
 <p>Используйте его для создания собственный конфигураций приложения.</p>
@@ -173,7 +174,7 @@
 <dd><p class="first">Название субдомена, на котором работает TravelCRM со схемой <em>public</em>.
 Например, если вы хотите, чтобы ваша программа была доступна по адресу
 <a class="reference external" href="http://demo.travelcrm.org.ua">http://demo.travelcrm.org.ua</a>, нужно указать такие параметры:</p>
-<div class="last highlight-python"><div class="highlight"><pre><span class="n">public_domain</span> <span class="o">=</span> <span class="n">travelcrm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">ua</span>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">public_domain</span> <span class="o">=</span> <span class="n">travelcrm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">ua</span>
 <span class="n">public_subdomain</span> <span class="o">=</span> <span class="n">demo</span>
 </pre></div>
 </div>
@@ -222,7 +223,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Vitalii Mazur.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

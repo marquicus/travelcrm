@@ -5,11 +5,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Установка &mdash; TravelCRM 0.6.4-dev documentation</title>
+    <title>Установка &#8212; TravelCRM 0.6.4-dev documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.1.0/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     
     <script type="text/javascript">
@@ -26,8 +26,10 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="TravelCRM 0.6.4-dev documentation" href="index.html" />
     <link rel="next" title="Настройка" href="setting.html" />
     <link rel="prev" title="Документация TravelCRM" href="index.html" />
@@ -37,7 +39,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -55,7 +57,6 @@
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
-            <li class="divider-vertical"></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -67,7 +68,7 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Установка</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Установка</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setting.html">Настройка</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Начала</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Конфигурация</a></li>
@@ -106,11 +107,11 @@
               
                 
   <li>
-    <a href="index.html" title="Previous Chapter: Документация TravelCRM"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Документация Tra...</span>
+    <a href="index.html" title="Previous Chapter: Документация TravelCRM"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Документация ...</span>
     </a>
   </li>
   <li>
-    <a href="setting.html" title="Next Chapter: Настройка"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Настройка &raquo;</span>
+    <a href="setting.html" title="Next Chapter: Настройка"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Настройка &raquo;</span>
     </a>
   </li>
               
@@ -142,7 +143,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 content">
       
   <div class="section" id="id1">
 <h1>Установка<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
@@ -166,14 +167,14 @@ Centos 5; PostgreSQL 9.4</p>
 <em>virtualenv</em>.</p>
 <p>Чтобы настроить <em>virtualenv</em> в которую будет установлен TravelCRM,
 сначала убедитесь, что установлен пакет <em>setuptools</em></p>
-<div class="highlight-python"><div class="highlight"><pre>$ python -c &#39;import setuptools&#39;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python -c &#39;import setuptools&#39;
 </pre></div>
 </div>
 <p>Если результатом этой комманды будет пустая строка, то <em>setuptools</em> уже установлен,
 если же будет получен результат вида:</p>
-<div class="highlight-python"><div class="highlight"><pre>Traceback (most recent call last):
-   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-ImportError: No module named setuptools
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">setuptools</span>
 </pre></div>
 </div>
 <p>то необходимо установить <em>setuptools</em> вручную</p>
@@ -182,12 +183,12 @@ ImportError: No module named setuptools
 <h2>Ручная установка setuptools<a class="headerlink" href="#setuptools" title="Permalink to this headline">¶</a></h2>
 <p>Для установки <em>setuptools</em> руками, скачайте <a class="reference external" href="http://peak.telecommunity.com/dist/ez_setup.py">ez_setup.py</a> и запустите его, используя
 установленный интерпретатор Python:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python ez_setup.py
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python ez_setup.py
 </pre></div>
 </div>
 <p>Эта комманда выполнит установку <em>setuptools</em> на компьютер в глобальную установку Python.
 Если во время выполнения возникнет ошибка доступа, то используйте комманду:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ sudo python ez_setup.py
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo python ez_setup.py
 </pre></div>
 </div>
 <p>или выполните установку как пользователь root.</p>
@@ -196,11 +197,11 @@ ImportError: No module named setuptools
 <h2>Установка virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h2>
 <p>После установки <em>setuptools</em>, необходимо установить пакет virtualenv. Для этого
 достаточно запустить комманду установки:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ easy_install virtualenv
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ easy_install virtualenv
 </pre></div>
 </div>
 <p>Если во время установки произошли ошибки доступа, попробуйте использовать:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ sudo easy_install virtualenv
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo easy_install virtualenv
 </pre></div>
 </div>
 <p>или повторить установку как пользователь root.</p>
@@ -209,11 +210,11 @@ ImportError: No module named setuptools
 <h2>Создание виртуальной среды<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>После успешной установки virtualenv можно создавать виртуальное окружение Python.
 Прежде всего создайте директорию, в которую хотите установить TravelCRM:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ mkdir ~/Projects/virtenv
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir ~/Projects/virtenv
 </pre></div>
 </div>
 <p>создаем в этой директории виртуальное окружение Python:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ virtualenv ~/Projects/virtenv
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ virtualenv ~/Projects/virtenv
 </pre></div>
 </div>
 </div>
@@ -221,14 +222,14 @@ ImportError: No module named setuptools
 <h2>Установка TravelCRM в виртуальное окружение<a class="headerlink" href="#travelcrm" title="Permalink to this headline">¶</a></h2>
 <p>Прежде всего нужно <a class="reference external" href="https://bitbucket.org/mazvv/travelcrm/downloads">скачать TravelCRM</a>
 и распаковать в директорию с виртуальным окружением:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cd ~/Projects/virtenv
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd ~/Projects/virtenv
 $ wget https://bitbucket.org/mazvv/travelcrm/downloads/travelcrm-0.6.4.dev0.tar.gz
 $ tar -xzvf travelcrm-0.6.4.dev0.tar.gz
 $ cd ./travelcrm-0.6.4.dev0
 </pre></div>
 </div>
 <p>Запустите установку TravelCRM:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ../bin/python ./setup.py develop
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ../bin/python ./setup.py develop
 </pre></div>
 </div>
 <p>Комманда установки автоматически установит все зависимые пакеты.</p>
@@ -246,28 +247,28 @@ $ cd ./travelcrm-0.6.4.dev0
 <a class="reference external" href="http://www.postgresql.org/docs/9.3/static/install-procedure.html">установите</a>
 и <a class="reference external" href="http://www.postgresql.org/docs/9.3/static/creating-cluster.html">настройте его</a>.</p>
 <p>Залогиньтесь как root:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ su -
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ su -
 </pre></div>
 </div>
 <p>Войдите под пользователем postgres и запустите psql:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ su postgres
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ su postgres
 $ psql
 </pre></div>
 </div>
 <p>Создайте нового пользователя и базу данных:</p>
-<div class="highlight-python"><div class="highlight"><pre>postgres=# create user travelcrm with password &#39;mypassword&#39; createdb superuser;
-postgres=# create database travelcrm with owner travelcrm;
-postgres=# \q;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># create user travelcrm with password &#39;mypassword&#39; createdb superuser;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># create database travelcrm with owner travelcrm;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># \q;</span>
 </pre></div>
 </div>
 <p>База данных создана, осталось развернуть бекап. Выходим из пользователя
 postgres и root:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ exit
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ exit
 $ exit
 </pre></div>
 </div>
 <p>Разварачиваем бекап:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ psql -U travelcrm travelcrm &lt; ./travelcrm-0.6.4.dev0/sql/travelcrm.sql
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ psql -U travelcrm travelcrm &lt; ./travelcrm-0.6.4.dev0/sql/travelcrm.sql
 </pre></div>
 </div>
 </div>
@@ -280,13 +281,13 @@ $ exit
 <div class="section" id="id9">
 <h2>Запуск приложения<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>Для запуска приложения выполните комманду:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cd ~/Projects/virtenv
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd ~/Projects/virtenv
 $ ./bin/pserve --reload ./travelcrm-0.6.4.dev0/development.ini
 </pre></div>
 </div>
 <p>Вы должны увидеть что-то вроде:</p>
-<div class="highlight-python"><div class="highlight"><pre>Starting server in PID 8150.
-serving on http://0.0.0.0:6543
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Starting</span> <span class="n">server</span> <span class="ow">in</span> <span class="n">PID</span> <span class="mf">8150.</span>
+<span class="n">serving</span> <span class="n">on</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">6543</span>
 </pre></div>
 </div>
 <p>Это означает, что приложение успешно запущено и слушает порт <em>6543</em></p>
@@ -308,7 +309,7 @@ serving on http://0.0.0.0:6543
     </p>
     <p>
         &copy; Copyright 2015, Vitalii Mazur.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>
